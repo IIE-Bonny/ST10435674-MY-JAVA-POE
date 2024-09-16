@@ -3,7 +3,7 @@
  */
 
 package com.mycompany.poegithub;
-
+import java.util.Scanner;
 /**
  *
  * @author B.O.N.N.Y
@@ -11,9 +11,13 @@ package com.mycompany.poegithub;
 public class POEgithub {
 
     public static void main(String[] args) {
-          int a = 5;
-          int b = 10;
-          int c = a+b;
-          System.out.println("Sum: " +c);
-    }
+         //Creating an object of a Scanner
+           Scanner sc = new Scanner(System.in);
+           
+           //Prompting user for inputs
+           
+           
+           
+    
+}
 }
