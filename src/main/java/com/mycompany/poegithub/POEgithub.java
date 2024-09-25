@@ -4,6 +4,7 @@
 
 package com.mycompany.poegithub;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 /**
  *
  * @author B.O.N.N.Y
@@ -11,11 +12,20 @@ import java.util.Scanner;
 public class POEgithub {
 
     public static void main(String[] args) {
-         //Creating an object of a Scanner
-           Scanner sc = new Scanner(System.in);
+           //Login instance
            
-           //Prompting user for inputs
            
+           // object for a scanner
+        Scanner sc = new Scanner(System.in);
+        
+        
+        
+        
+         //declare variables
+        String username = "";
+        String password = "";
+        
+        
            
            
     
