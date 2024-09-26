@@ -4,7 +4,6 @@
  */
 package com.mycompany.poegithub;
 
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 /**
@@ -12,34 +11,59 @@ import java.util.regex.Pattern;
  * @author B.O.N.N.Y
  */
 public class Login {
-    Scanner sc = new Scanner(System.in);
     
-    private String Name;
-    private String Username;
-    private String password;
-    
+     //declare variables
+        String username = "";
+        String password = "";
     
     
-    
+    //check username method
     public boolean checkUserName(){
-        if(!Name.contains("_") && Name.length() > 5){
-            return false;
-        }
-        return true;
-    }
-    
-    public boolean checkPaswordComplexity(){
-           //check if password is at least 8 characters long
-       if(password.length() < 8){
-           return false;
-       }
-       else{
-           System.out.print("Password must atleast be 8 characters long");
-       }
-        return false;  
-    }
+       //temp variable for checking
+        boolean Found = false;
+        
+        // check username
+        if(username.contains("_")){
+            //assign to false
+            Found = false;
+            //messsage
+            System.out.println("Useername not captured!!");
             
+        }else{
+            //then assign to true
+            Found = true;
+            System.out.println("Username is captured!!");
+        }
+        
+        return Found;
+    }
     
-    
-    
+    //check password complexity method
+    public boolean checkPaswordComplexity(){
+        
+         //pattern regex
+        Pattern check_num = Pattern.compile(" [0123456789] ");
+        Pattern check_special = Pattern.compile(" [*-`~!@#$&_'^] ");
+        Pattern check_Upper = Pattern.compile("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]");
+        
+        //temp variable Found
+        boolean Found = false;
+        
+        //check all here
+        if( check_num.matcher(password).find() && check_special.matcher(password) .find() && check_Upper.matcher(password) .find() && password.length() >= 8){
+            
+            //assign true
+            Found = true;
+            //message
+            System.out.println("Password is captured!!");
+        }else{
+            //assign to false
+            Found = false;
+            //message
+            System.out.println("Password not captured!!");
+        }
+        
+        return Found;
+        
+    }
 }

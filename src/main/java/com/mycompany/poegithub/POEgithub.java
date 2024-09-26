@@ -13,21 +13,37 @@ public class POEgithub {
 
     public static void main(String[] args) {
            //Login instance
-           
+           Login login_checks = new Login();
            
            // object for a scanner
         Scanner sc = new Scanner(System.in);
-        
-        
-        
+       
         
          //declare variables
         String username = "";
         String password = "";
         
+          //Promting the user for username and password
+          //use do while
+        do{
+            //prompt
+            System.out.println("Enter username");
+            username = sc.nextLine();
+        }while( !login_checks.checkUserName());
         
+        //user do while for password
+        do{
+            //prompt
+            System.out.println("Enter password: ");
+            password = sc.nextLine();
+        }while(!login_checks.checkPaswordComplexity());
+        
+       
+           
+    }
+       
            
            
     
 }
-}
+
