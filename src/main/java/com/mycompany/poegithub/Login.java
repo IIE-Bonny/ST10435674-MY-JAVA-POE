@@ -22,18 +22,18 @@ public class Login {
     //check username method
     public boolean checkUserName(){
        //temp variable for checking
-        boolean UserFound = false;
+         this.UserFound= false;
         
         // check username
-        if(username.contains("_")){
+        if(username.contains("_") && username.length() >= 5){
             //assign to true
             UserFound = true;
 
         }else{
-            UserFound = false;
+            RegisterUser();
         }
         
-        return checkUserName();
+        return true;
     }
     //Message return method
     public String RegisterUser(){
@@ -46,7 +46,7 @@ public class Login {
             System.out.println("Password does not meet complexity requirements");
         }
             return null;
-        
+           
         }
     
     //check password complexity method
@@ -58,7 +58,7 @@ public class Login {
         Pattern check_Upper = Pattern.compile("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]");
         
         //temp variable Found
-        boolean PassFound = false;
+         this.PassFound = false;
         
         //check all here
         if( check_num.matcher(password).find() && check_special.matcher(password) .find() && check_Upper.matcher(password) .find() && password.length() >= 8){
@@ -74,10 +74,9 @@ public class Login {
             System.out.println("Password not captured!!");
         }
         
-        return PassFound;
+        return true;
         
     }
-    
     
     
 }
