@@ -28,9 +28,7 @@ public class Login {
         if(username.contains("_")){
             //assign to true
             UserFound = true;
-            
-           
-            
+
         }else{
             UserFound = false;
         }
@@ -44,7 +42,10 @@ public class Login {
             //message
         System.out.println("Username incorrectly formatted");
         
+        }else if(PassFound = false){
+            System.out.println("Password does not meet complexity requirements");
         }
+            return null;
         
         }
     
