@@ -28,19 +28,19 @@ public class Login {
         if(username.contains("_") && username.length() >= 5){
             //assign to true
             UserFound = true;
-
         }else{
             RegisterUser();
         }
         
         return true;
     }
+    
     //Message return method
     public String RegisterUser(){
             //if Username / UserFound is false
         if(UserFound = false){
             //message
-        System.out.println("Username incorrectly formatted");
+        System.out.println("Username incorrectly formatted please ensure that");
         
         }else if(PassFound = false){
             System.out.println("Password does not meet complexity requirements");
@@ -78,5 +78,10 @@ public class Login {
         
     }
     
+    public boolean loginUser(){
+        
+            return true;
+        
+    }
     
 }
