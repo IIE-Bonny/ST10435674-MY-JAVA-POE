@@ -11,4 +11,5 @@
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>com.mycompany.poegithub.POEgithub</exec.mainClass>
     </properties>
+    <name>ST10435674-BONNY-POE</name>
 </project>

@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  *
  * @author B.O.N.N.Y
  */
-public class POEgithub {
+public class ST10435674BONNYPOE {
 
     public static void main(String[] args) {
            //Login instance

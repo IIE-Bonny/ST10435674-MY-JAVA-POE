@@ -39,15 +39,14 @@ public class Login {
     }
     //
     public String RegisterUser(){
-            boolean UserFound;
             //if Username / UserFound is false
         if(UserFound = false){
             //message
         System.out.println("Username incorrectly formatted");
-        }
-            return null;
         
-    }
+        }
+        
+        }
     
     //check password complexity method
     public boolean checkPaswordComplexity(){
