@@ -20,14 +20,21 @@ public class ST10435674BONNYPOE {
        
         
          //declare variables
+        String name = "";
+        String Lastname = "";
         String username = "";
         String password = "";
         
           //Promting the user for username and password
+          System.out.println("Enter your name");
+          name = sc.nextLine();
+          System.out.println("Enter your lastname");
+          Lastname = sc.nextLine();
+          
           //use do while
         do{
             //prompt
-            System.out.println("Enter username");
+            System.out.println("Create a username");
             username = sc.nextLine();
         }while( !login_checks.checkUserName());
         
@@ -36,7 +43,7 @@ public class ST10435674BONNYPOE {
             //prompt
             System.out.println("Enter password: ");
             password = sc.nextLine();
-        }while(!login_checks.checkPaswordComplexity());
+        }while(!login_checks.checkPasswordComplexity());
         
        
            

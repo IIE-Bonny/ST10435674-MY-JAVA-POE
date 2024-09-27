@@ -33,9 +33,9 @@ public class Login {
             UserFound = false;
         }
         
-        return UserFound;
+        return checkUserName();
     }
-    //
+    //Message return method
     public String RegisterUser(){
             //if Username / UserFound is false
         if(UserFound = false){
@@ -50,7 +50,7 @@ public class Login {
         }
     
     //check password complexity method
-    public boolean checkPaswordComplexity(){
+    public boolean checkPasswordComplexity(){
         
          //pattern regex
         Pattern check_num = Pattern.compile(" [0123456789] ");
@@ -77,4 +77,7 @@ public class Login {
         return PassFound;
         
     }
+    
+    
+    
 }
