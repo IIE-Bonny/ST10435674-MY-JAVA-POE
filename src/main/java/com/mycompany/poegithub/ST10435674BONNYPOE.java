@@ -36,14 +36,14 @@ public class ST10435674BONNYPOE {
             //prompt
             System.out.println("Create a username");
             username = sc.nextLine();
-        }while( !login_checks.checkUserName());
+        }while( !login_checks.checkUserName(username));
         
         //user do while for password
         do{
             //prompt
             System.out.println("Enter password: ");
             password = sc.nextLine();
-        }while(!login_checks.checkPasswordComplexity());
+        }while(!login_checks.checkPasswordComplexity(password));
         
        
            
