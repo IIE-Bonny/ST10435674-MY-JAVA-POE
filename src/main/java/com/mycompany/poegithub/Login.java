@@ -58,21 +58,7 @@ public class Login {
             this.username = username;
             this.password = password;
         }
-
-
         
-
-/*
-//if Username / UserFound is false
-        if(UserFound = false){
-            //message
-        System.out.println("Username incorrectly formatted please ensure that");
-        
-        }else if(PassFound = false){
-            System.out.println("Password does not meet complexity requirements");
-        }
-
-*/
             return result;
            
         }
@@ -83,11 +69,8 @@ public class Login {
          //pattern regex
         Pattern check_num = Pattern.compile(" [0123456789] ");
         Pattern check_special = Pattern.compile(" [~`!@#$%&*()_+=';-] ");
-//        Pattern check_Upper = Pattern.compile("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]");
         Pattern check_Upper = Pattern.compile("[A-Za-z]+");
-//        Pattern check_special = Pattern.compile(".*[`~!@#$%&*()-_=+|[{]};:',<.>/?].*");
-//        Pattern check_special = Pattern.compile ("[$&+,:;=?@#|'<>.-^*()%!]");
-//        Pattern check_num = Pattern.compile(" [0-9] ");
+
         //temp variable Found
          this.PassFound = false;
         
@@ -111,11 +94,37 @@ public class Login {
         
     }
     
-    public boolean loginUser(){
-        boolean loginResult = false;
+    public boolean loginUser(String username, String password){
         
-            return true;
+        boolean login_Result = false;
+        
+        if(username.matches(username) && password.matches(password)){
+            // message
+            System.out.println("Login details match!!");
+            // assign to true
+            login_Result = true;
+            
+        }else{
+            // message
+            System.out.println("Login details do not match login details stored when registered!!");
+            // assign to false
+            login_Result = false;
+            
+        }
+        
+            return login_Result;
         
     }
     
+    public String returnLoginStatus(String firstname, String lastname, String username, String password){
+    /*
+          String statResult = "";
+          if(!loginUser(String username, String password)){
+          statResult = "A failed Login";
+          
+          }else{
+            statResult = "A successful Login";
+            }
+            return statResult;
+*/
 }
