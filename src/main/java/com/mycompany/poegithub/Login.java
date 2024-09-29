@@ -105,26 +105,27 @@ public class Login {
             login_Result = true;
             
         }else{
-            // message
-            System.out.println("Login details do not match login details stored when registered!!");
-            // assign to false
+             //message
+              System.out.println("Login details do not match login details stored when registered!!");
+             //assign to false
             login_Result = false;
             
         }
         
-            return login_Result;
+           return login_Result;
         
     }
     
+    
     public String returnLoginStatus(String firstname, String lastname, String username, String password){
-    /*
-          String statResult = "";
-          if(!loginUser(String username, String password)){
-          statResult = "A failed Login";
-          
-          }else{
-            statResult = "A successful Login";
+        
+        String return_Status = "";
+        
+         if(!checkPasswordComplexity(String password) && !checkUserName(String username)){
+        return_Status = "A failed Login!!";
+        }else{
+            return_Status = "A successful Login!!";
             }
-            return statResult;
-*/
+        
+            return return_Status; 
 }
