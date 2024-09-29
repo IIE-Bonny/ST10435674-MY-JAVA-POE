@@ -88,6 +88,7 @@ public class Login {
               hasNumber = true;
           }
           if(matcher.find()){
+              System.out.println("Password Captured");
               hasSpecialChar = true;
           }
       }
@@ -146,10 +147,14 @@ public class Login {
     
     
     public String returnLoginStatus(String firstname, String lastname, String username, String password){
-        
-        if(loginUser(String username, String password)){
-        return = "A successful Login";
-       }else{
-            return = "A failed Login";
+       // Initialized outcome variable
+        String outcome ="";
+        //check if login is successful
+        if(loginUser(username, password)){
+        outcome = "A successful Login, Welcome "+firstname+lastname;
+        }else{
+        outcome  = "A failed Login";
             }      
+            return outcome;
+}
 }
