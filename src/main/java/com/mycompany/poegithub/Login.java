@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.poegithub;
-
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -66,6 +66,34 @@ public class Login {
     //check password complexity method
     public boolean checkPasswordComplexity(String password){
         
+      //password must be at least 8 characters long
+      if(password.length() < 8){
+          return false;
+      }
+        
+      boolean hasUpperCase = false;
+      boolean hasNumber = false;
+      boolean hasSpecialChar = false;
+      
+      //Regex to find special characters
+      Pattern specialCharPattern = Pattern.compile("[^a-zA-Z0-9]");
+      Matcher matcher = specialCharPattern.matcher(password);
+      
+      for(int i = 0; i < password.length(); i++){
+          char c = password.charAt(i);
+          if(Character.isUpperCase(c)){
+              hasUpperCase = true;
+          }
+          if(Character.isDigit(c)){
+              hasNumber = true;
+          }
+          if(matcher.find()){
+              hasSpecialChar = true;
+          }
+      }
+      
+      return hasUpperCase && hasNumber && hasSpecialChar;
+      /* 
          //pattern regex
         Pattern check_num = Pattern.compile(" [0123456789] ");
         Pattern check_special = Pattern.compile(" [~`!@#$%&*()_+=';-] ");
@@ -91,7 +119,7 @@ public class Login {
         }
         
         return PassFound;
-        
+        */
     }
     
     public boolean loginUser(String username, String password){
@@ -119,13 +147,9 @@ public class Login {
     
     public String returnLoginStatus(String firstname, String lastname, String username, String password){
         
-        String return_Status = "";
-        
-         if(!checkPasswordComplexity(String password) && !checkUserName(String username)){
-        return_Status = "A failed Login!!";
-        }else{
-            return_Status = "A successful Login!!";
-            }
-        
-            return return_Status; 
+        if(loginUser(String username, String password)){
+        return = "A successful Login";
+       }else{
+            return = "A failed Login";
+            }      
 }
