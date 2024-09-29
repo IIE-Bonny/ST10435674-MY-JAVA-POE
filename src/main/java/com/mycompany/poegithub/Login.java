@@ -43,16 +43,21 @@ public class Login {
     
     //Message return method
     public String RegisterUser(String firstname, String lastname, String username, String password){
-         
+         //Initialized result variable
         String result = "";
+        //check if username has uderscore
         if (!checkUserName(username)){
+            //message
             result = "The username is incorrectly formatted!";
         }        
         else if(!checkPasswordComplexity(password)){
+            //message
             result = "The password does not meet the password complexity requirements"; 
         }
         else{
+            //message
             result = "The user has been registered successfully";
+            //constructors
             this.firstname = firstname;
             this.lastname = lastname;
             this.username = username;
@@ -70,7 +75,7 @@ public class Login {
       if(password.length() < 8){
           return false;
       }
-        
+        //initialized boolean variables
       boolean hasUpperCase = false;
       boolean hasNumber = false;
       boolean hasSpecialChar = false;
@@ -82,13 +87,17 @@ public class Login {
       for(int i = 0; i < password.length(); i++){
           char c = password.charAt(i);
           if(Character.isUpperCase(c)){
+              //assign isUpperCase to true
               hasUpperCase = true;
           }
           if(Character.isDigit(c)){
+              //assign isDigit to true
               hasNumber = true;
           }
           if(matcher.find()){
+              //message
               System.out.println("Password Captured");
+              //assign hasSpecialChar to true
               hasSpecialChar = true;
           }
       }
@@ -124,9 +133,9 @@ public class Login {
     }
     
     public boolean loginUser(String username, String password){
-        
+        //Initialized login_Result variable
         boolean login_Result = false;
-        
+        //check if username and password matches 
         if(username.matches(username) && password.matches(password)){
             // message
             System.out.println("Login details match!!");
@@ -144,7 +153,6 @@ public class Login {
            return login_Result;
         
     }
-    
     
     public String returnLoginStatus(String firstname, String lastname, String username, String password){
        // Initialized outcome variable
